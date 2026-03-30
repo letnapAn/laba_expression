@@ -29,11 +29,18 @@ public class Expression {
      * Создает выражение для вычисления.
      * @param expression строка выражения
      */
-    public Expression(String expression) {
+    private  Expression(String expression, Tokenizer tokenizer, Parser parser, StackEvaluator evaluator){
         this.expression = expression;
-        this.tokenizer = new Tokenizer();
-        this.parser = new Parser();
-        this.evaluator = new StackEvaluator();
+        this.tokenizer = tokenizer;
+        this.parser = parser;
+        this.evaluator = evaluator;
+    }
+    public Expression(String expression) {
+        this(expression, new Tokenizer(), new Parser(), new StackEvaluator());
+    }
+
+    public Expression(String expression, StackEvaluator evaluator) {
+        this(expression, new Tokenizer(), new Parser(), evaluator);
     }
 
     /**
