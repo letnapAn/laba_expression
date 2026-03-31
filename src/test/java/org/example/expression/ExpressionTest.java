@@ -57,4 +57,32 @@ class ExpressionTest {
         Expression expr = new Expression("2 + + 3");
         assertThrows(ExpressionException.class, expr::calc);
     }
+
+    @Test
+    void testSinWithAddition() throws ExpressionException {
+        Expression expr = new Expression("2 + sin(0)");
+        double result = expr.calc();
+        assertEquals(2.0, result, 1e-10);
+    }
+
+    @Test
+    void testCosWithMultiplication() throws ExpressionException {
+        Expression expr = new Expression("5 * cos(0)");
+        double result = expr.calc();
+        assertEquals(5.0, result, 1e-10);
+    }
+
+    @Test
+    void testSinWithParentheses() throws ExpressionException {
+        Expression expr = new Expression("(sin(0) + cos(0)) * 2");
+        double result = expr.calc();
+        assertEquals(2.0, result, 1e-10);
+    }
+
+    @Test
+    void testComplexTrigonometricExpression() throws ExpressionException {
+        Expression expr = new Expression("sin(0) + cos(7 - 6 / 2 - 2 * (0.5 * 4)) / 2 + 7 * 3");
+        double result = expr.calc();
+        assertEquals(21.5, result, 1e-10);
+    }
 }
