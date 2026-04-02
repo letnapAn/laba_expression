@@ -32,10 +32,10 @@ public class FunctionRegistry {
         register("cos", new TrigonometricalFunction(TrigonometricalFunction.Type.COS));
         register("tan", new TrigonometricalFunction(TrigonometricalFunction.Type.TAN));
 
-//        // Логарифмические
-//        register("ln", new LogFunction(LogFunction.Type.LN));
-//        register("log10", new LogFunction(LogFunction.Type.LOG10));
-//        register("log2", new LogFunction(LogFunction.Type.LOG2));
+        // Логарифмические
+        register("ln", new LogFunction(LogFunction.Type.LN));
+        register("log10", new LogFunction(LogFunction.Type.LOG10));
+        register("log2", new LogFunction(LogFunction.Type.LOG2));
 
         // Другие (через лямбды для простоты)
         register("sqrt", args->Math.sqrt(args[0]));
