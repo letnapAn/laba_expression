@@ -90,10 +90,18 @@ class ExpressionTest {
         Expression expr = new Expression("log10(100)+ln(1)+log2(8)");
         double result = expr.calc();
         assertEquals(5, result, 1e-10);
-    }    @Test
+    }
+    @Test
     void testComplexLogExpression() throws ExpressionException {
         String pi = Double.toString(Math.PI);
         Expression expr = new Expression("sin("+pi+"/2) + log10(100/2 + 17 - 7 + 80*0.5)");
+        double result = expr.calc();
+        assertEquals(3, result, 1e-10);
+    }
+    @Test
+    void testComplexMathExpression() throws ExpressionException {
+        String pi = Double.toString(Math.PI);
+        Expression expr = new Expression("sqrt(17-1/2*3 + 0.5) - abs(9-10)");
         double result = expr.calc();
         assertEquals(3, result, 1e-10);
     }
