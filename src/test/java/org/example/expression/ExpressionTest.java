@@ -1,8 +1,4 @@
 package org.example.expression;
-import org.example.expression.function.VariableProvider;
-import org.example.expression.ExpressionException;
-import java.io.ByteArrayInputStream;
-import java.util.Scanner;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -101,15 +97,9 @@ class ExpressionTest {
     }
     @Test
     void testComplexMathExpression() throws ExpressionException {
-        String pi = Double.toString(Math.PI);
         Expression expr = new Expression("sqrt(17-1/2*3 + 0.5) - abs(9-10)");
         double result = expr.calc();
         assertEquals(3, result, 1e-10);
     }
-//    @Test
-//    void testVariableProvider() throws Exception {
-//        Expression expression = new Expression("x*x+y-2/y");
-//        double res = expression.calc();
-//        assertEquals(res, 2.75);
-//    }
+
 }

@@ -13,6 +13,7 @@
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
     <dependencies>
         <!-- JUnit 5 -->
         <dependency>
@@ -22,7 +23,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- AssertJ (опционально, для удобных ассертов) -->
+        <!-- AssertJ -->
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
@@ -33,6 +34,7 @@
 
     <build>
         <plugins>
+            <!-- Compiler plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -41,6 +43,37 @@
                     <source>11</source>
                     <target>11</target>
                 </configuration>
+            </plugin>
+
+            <!-- 🔹 Javadoc plugin (НОВОЕ) -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.6.3</version>
+                <configuration>
+                    <!-- Вывод в src/docs -->
+                    <outputDirectory>${project.basedir}/src/docs</outputDirectory>
+                    <!-- Кодировка -->
+                    <encoding>UTF-8</encoding>
+                    <docencoding>UTF-8</docencoding>
+                    <charset>UTF-8</charset>
+                    <!-- Тихий режим (меньше шума в консоли) -->
+                    <quiet>true</quiet>
+                    <!-- Отключить строгие проверки (опционально, для локальной разработки) -->
+                    <doclint>none</doclint>
+                    <!-- Заголовок документации -->
+                    <doctitle>${project.name} ${project.version} API</doctitle>
+                    <windowtitle>${project.name} API</windowtitle>
+                </configuration>
+                <executions>
+                    <!-- Авто-генерация при сборке (опционально) -->
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
