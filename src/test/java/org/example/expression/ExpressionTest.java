@@ -1,8 +1,9 @@
 package org.example.expression;
-
+import org.example.expression.function.VariableProvider;
 import org.example.expression.ExpressionException;
+import java.io.ByteArrayInputStream;
+import java.util.Scanner;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -105,5 +106,10 @@ class ExpressionTest {
         double result = expr.calc();
         assertEquals(3, result, 1e-10);
     }
-
+//    @Test
+//    void testVariableProvider() throws Exception {
+//        Expression expression = new Expression("x*x+y-2/y");
+//        double res = expression.calc();
+//        assertEquals(res, 2.75);
+//    }
 }

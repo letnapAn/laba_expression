@@ -160,7 +160,7 @@ class MathFunctionTest {
         }
 
         @Test
-        @DisplayName("getDelegate() возвращает функцию без валидации — риск!")
+        @DisplayName("getDelegate() возвращает функцию без валидации")
         void getDelegate_bypassesValidation() {
             Function delegate = MathFunction.Type.SQRT.getDelegate();
 
