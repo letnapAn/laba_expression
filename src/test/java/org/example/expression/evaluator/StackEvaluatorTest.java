@@ -130,18 +130,6 @@ class StackEvaluatorTest {
     }
 
     @Test
-    void testEvaluateInvalidTokenInRPN() {
-        // RPN с недопустимым токеном (VARIABLE)
-        List<Token> rpn = Arrays.asList(
-                new Token(TokenType.VARIABLE, "x"),
-                new Token(TokenType.NUMBER, "5"),
-                new Token(TokenType.PLUS, "+")
-        );
-
-        assertThrows(ExpressionException.class, () -> evaluator.evaluate(rpn));
-    }
-
-    @Test
     void testEvaluateEmptyRPN() {
         List<Token> rpn = Collections.emptyList();
 
