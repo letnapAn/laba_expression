@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"org.example"},{"l":"org.example.expression"},{"l":"org.example.expression.evaluator"},{"l":"org.example.expression.function"},{"l":"org.example.expression.tokenizer"}]
