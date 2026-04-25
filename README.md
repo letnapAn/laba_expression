@@ -41,14 +41,14 @@
 ## Установка
 
 ### Требования
-- Java 11 или выше
+- Java 11 или выше 
 - Maven 3.6 или выше
 
-### Пошаговая инструкция
+### -----
 
 1. **Клонируйте репозиторий**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/letnapAn/laba_expression.git
    cd labaExpression
    ```
 2. **Проверьте версию Java**
@@ -63,10 +63,4 @@
    ```bash
    mvn package   
    ```
-## Тесты работают хорошо
-Можно не верить на слово и проверить 
-   ```bash
-   mvn test  
-   ```
-
 ![img.png](src/img.png)
