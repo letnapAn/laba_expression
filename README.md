@@ -63,4 +63,4 @@
    ```bash
    mvn package   
    ```
-![img.png](src/img.png)
+![img.png](img.png)
